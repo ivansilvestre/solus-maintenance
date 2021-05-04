@@ -9,18 +9,14 @@ update () {
     echo
         echo -e "${BLUE} .................. Starting updates................. ${NOCOLOR}"
     echo
-        sudo eopkg upgrade -y
-    echo
-        echo -e "${BLUE} ---------------------------------------------------- ${NOCOLOR}"
-    echo
-        sudo flatpak update
+        sudo eopkg upgrade && sudo flatpak update -y
 }
 
 cleaning () { 
     echo    
         echo -e "${BLUE} ..................... Cleaning ..................... ${NOCOLOR}"
     echo
-        sudo eopkg rmo -y
+        sudo eopkg rmo && sudo eopkg dc -y
     echo
         echo -e "${BLUE} ..................... All Done ..................... ${NOCOLOR}" 
 }
